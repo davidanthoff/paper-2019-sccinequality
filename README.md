@@ -45,7 +45,12 @@ you can issue the following two git commands to make sure the submodule is prese
 
 ## Running the replication script
 
-To recreate all outputs for this paper, run the ``main.ipynb`` file in the folder ``src`` in IJulia.
+To recreate all outputs and figures for this paper, run the ``main.ipynb`` file in the folder ``src`` in IJulia.
+
+## Input files
+
+SSP_v9_clean.xlxs: SSP database combined population, GDP, and MER exchange rates, downloaded and cleaned from the offical SSP database at https://tntcat.iiasa.ac.at/SspDb/dsd?Action=htmlpage&page=series
+
 
 ## Result and figure files
 
