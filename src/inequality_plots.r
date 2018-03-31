@@ -11,7 +11,11 @@ library("scales")
 library("data.table")
 library("stringr")
 
-saveplot <- function(plotname){ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".eps", sep=""), plot = last_plot(), width=7, height=5)}
+saveplot <- function(plotname)
+{
+  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".eps", sep=""), plot = last_plot(), width=7, height=5)
+  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".pdf", sep=""), plot = last_plot(), width=7, height=5)
+}
 
 Gini <- function (x, weights = rep(1, length = length(x))) 
 {
