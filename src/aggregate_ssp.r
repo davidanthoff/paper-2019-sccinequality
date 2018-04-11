@@ -1,23 +1,19 @@
 #aggregate SSP data
 
-#first get all required packages, install from CRAN if not available
-require_package <- function(package){
-  if(!is.element(package, .packages(all.available = TRUE))){
-    try(install.packages(package, repos="http://cran.rstudio.com"), silent = TRUE)
-  }
-  suppressPackageStartupMessages(library(package,character.only=T, quietly = TRUE))  
-}
-pkgs <- c('data.table', 'stringr', 'utils', 'reshape2', 'plyr','doFuture', 'ggplot2', 'ggrepel', 'scales', 'openxlsx')
-res <- lapply(pkgs, require_package)
+
+library(openxlsx)
+library(stringr)
+require(utils)
+library(data.table)
+library(reshape2)
+library(plyr)
 
 
+Population = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "Population", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE)
 
+GDP = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "GDP PPP", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE)
 
-Population = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "Population", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE) 
-
-GDP = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "GDP PPP", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE) 
-
-PPP2MER = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "PPP2MER", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE)[1:2] 
+PPP2MER = read.xlsx("../data/SSP_v9_clean.xlsx", sheet = "PPP2MER", startRow = 1, colNames = TRUE, skipEmptyRows = TRUE, rowNames = FALSE)[1:2]
 
 #choose SSP
 Population <- subset(Population, SCENARIO=="SSP2_v9_130325")

@@ -1,11 +1,21 @@
-#Create inequality plots for Anthoff and Emmerling (2018)
+#set work directory to rouce file pane
 
+suppressPackageStartupMessages
+rm(list = ls())
 
-saveplot <- function(plotname) 
-{ 
-  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".eps", sep=""), plot = last_plot(), width=7, height=5) 
-  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".pdf", sep=""), plot = last_plot(), width=7, height=5) 
-} 
+require("reshape2")
+require("plyr")
+require("ggplot2")
+library("ggrepel")
+library("scales")
+library("data.table")
+library("stringr")
+
+saveplot <- function(plotname)
+{
+  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".eps", sep=""), plot = last_plot(), width=7, height=5)
+  ggsave(filename=paste("../output/", as.character(gsub(" ", "_", plotname)),".pdf", sep=""), plot = last_plot(), width=7, height=5)
+}
 
 Gini <- function (x, weights = rep(1, length = length(x))) 
 {
