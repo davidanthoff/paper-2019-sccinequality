@@ -1,8 +1,8 @@
-# Replication code for Anthoff and Emmerling (2018) "Inequality and the Social Cost of Carbon"
+# Replication code for Anthoff and Emmerling (2019) "Inequality and the Social Cost of Carbon"
 
 This repository holds all code required to replicate the results of:
 
-Anthoff, David and Johannes Emmerling (2018) "Inequality and the Social Cost of Carbon".
+Anthoff, David and Johannes Emmerling (2019) "Inequality and the Social Cost of Carbon".
 
 ## Software requirements
 
