@@ -3,7 +3,7 @@ under the MIT license. This includes all content in this repository,
 except the content of the folder src/mimi-rice-2010.jl and
 src/fund.
 
-> Copyright (c) 2018: David Anthoff and Johannes Emmerling
+> Copyright (c) 2018-2019: David Anthoff and Johannes Emmerling
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
